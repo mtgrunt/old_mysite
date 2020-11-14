@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>It Was All A Dream,
-	<br/>
-	I Used To Read Word Up Magazine.</h1>
+	{% if all_addresses %}
+		{% for records in all_addresses %}
+			{{ records.name }}<br/>
+			{{ records.email }}<br/>
+			{{ records.phone }}<br/>
+			{{ records.address }}<br/>
+			{{ records.city }}<br/>
+			{{ records.state }}<br/>
+			{{ records.zip }}<br/>
+			<hr/>
+		{% endfor %}
+	{% endif %}
+
 {% endblock %}
